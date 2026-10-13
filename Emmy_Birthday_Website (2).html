@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>Happy Birthday, Emmy! 🎂</title>
+<style>
+  :root{--pink:#ff79ad;--rose:#ff4f91;--lav:#b7a0ff;--cream:#fffaf4;--ink:#49364f;--muted:#806b86}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:ui-rounded,"Trebuchet MS",system-ui,-apple-system,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff0f6 0%,#fff9ff 45%,#fff8ee 100%);overflow-x:hidden}
+  button{font:inherit;cursor:pointer}
+  .sparkle-bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .sparkle{position:absolute;opacity:.55;animation:twinkle 3s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{transform:scale(.8) rotate(0);opacity:.25}50%{transform:scale(1.2) rotate(20deg);opacity:.8}}
+  .wrap{position:relative;z-index:1;width:min(960px,92%);margin:auto}
+  header{text-align:center;padding:26px 0 10px}
+  .pill{display:inline-block;background:#fff;border:1px solid #ffd3e5;border-radius:999px;padding:8px 14px;font-size:.84rem;color:#b34478;box-shadow:0 6px 20px #ffbad233}
+  .hero{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 12px 55px}
+  .eyebrow{font-size:.95rem;letter-spacing:.13em;text-transform:uppercase;color:#b45d90;font-weight:800}
+  h1{font-size:clamp(3rem,10vw,6.6rem);line-height:.98;letter-spacing:-.06em;margin:18px 0;background:linear-gradient(120deg,#ff5796,#b08aff 55%,#ff9b7a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:580px;font-size:clamp(1rem,2.7vw,1.2rem);line-height:1.75;color:var(--muted);margin:4px auto 22px}
+  .cake{font-size:clamp(4rem,13vw,7rem);filter:drop-shadow(0 10px 12px #ff8ab533);animation:bob 3s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-10px) rotate(2deg)}}
+  .btn{border:0;border-radius:999px;padding:13px 21px;background:linear-gradient(120deg,var(--rose),#b28aff);color:white;font-weight:800;box-shadow:0 9px 20px #d76da944;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px #d76da955}
+  .btn.secondary{background:#fff;color:#b34d83;border:1px solid #ffd2e4;box-shadow:none}
+  section{padding:30px 0 46px}
+  .section-title{text-align:center;font-size:clamp(1.7rem,5vw,2.5rem);margin:0 0 12px;letter-spacing:-.03em}
+  .section-sub{text-align:center;color:var(--muted);margin:0 auto 25px;line-height:1.65;max-width:570px}
+  .card{background:#ffffffc9;border:1px solid #ffe0ec;border-radius:26px;padding:clamp(20px,5vw,34px);box-shadow:0 16px 40px #9c6c8a12;backdrop-filter:blur(8px)}
+  .letter{max-width:720px;margin:auto;line-height:1.9;font-size:1.04rem}
+  .letter .hello{font-size:1.35rem;font-weight:900;color:#c44e87}
+  .signature{font-weight:800;color:#a45cba;margin-top:18px}
+  .reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+  .reason{background:#fff;border:1px solid #f8dcec;border-radius:22px;padding:21px 16px;text-align:center;box-shadow:0 10px 25px #a45cba0d}
+  .reason .emoji{font-size:2rem}.reason h3{margin:10px 0 7px;font-size:1.05rem}.reason p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+  .gift-area{text-align:center}
+  .gift-box{font-size:6rem;background:none;border:0;filter:drop-shadow(0 12px 12px #d65b9840);transition:transform .25s;animation:bob 2.6s ease-in-out infinite}
+  .gift-box:hover{transform:scale(1.08) rotate(-4deg)}
+  .surprise{display:none;max-width:650px;margin:22px auto 0;animation:pop .55s ease both}
+  .surprise.show{display:block}
+  @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .surprise h3{font-size:1.7rem;color:#c44e87;margin:0 0 10px}
+  .surprise p{line-height:1.8;color:var(--muted)}
+  .wish-box{max-width:650px;margin:0 auto;text-align:center}
+  .wish-text{min-height:60px;color:#9b5c9e;font-weight:700;line-height:1.7;margin:18px 0}
+  footer{text-align:center;padding:28px 10px 38px;color:#9a819d;font-size:.9rem}
+  .heart{position:fixed;z-index:5;pointer-events:none;animation:floatUp 2.4s ease-out forwards;font-size:20px}
+  @keyframes floatUp{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:1}100%{transform:translateY(-170px) rotate(25deg) scale(1.35);opacity:0}}
+  .confetti{position:fixed;top:-12px;width:9px;height:14px;z-index:6;pointer-events:none;animation:fall linear forwards;border-radius:2px}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.85}}
+  .tiny-note{text-align:center;color:#a18ba5;font-size:.8rem;margin-top:18px}
+  @media(max-width:650px){.reasons{grid-template-columns:1fr}.reason{padding:18px}.hero{min-height:72vh}.card{border-radius:22px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="sparkle-bg" id="sparkles" aria-hidden="true"></div>
+<div class="wrap">
+  <header><span class="pill">✦ a little corner of the internet, just for Emmy ✦</span></header>
+  <main>
+    <section class="hero" id="top">
+      <div class="cake" aria-hidden="true">🎂</div>
+      <div class="eyebrow">October 14 · your special day</div>
+      <h1>Happy Birthday,<br>Emmy!</h1>
+      <p>Today deserves extra sparkle, extra cake, and a whole lot of happiness. So I made you this tiny little surprise. 💗</p>
+      <button class="btn" onclick="celebrate();document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Open your birthday page ✨</button>
+    </section>
+
+    <section id="letter">
+      <h2 class="section-title">A little birthday letter 💌</h2>
+      <p class="section-sub">A few words from your friend, sent with lots of good wishes.</p>
+      <article class="card letter">
+        <div class="hello">Dear Emmy, 🌷</div>
+        <p>Happy Birthday!! 🥳💖 I hope your day is filled with lovely surprises, delicious cake, silly laughs, and all the little things that make you smile.</p>
+        <p>Even though we know each other online, I’m really glad our paths crossed. It’s kind of amazing how people can meet through a screen and still make a day feel a little brighter. Thank you for being part of my world!</p>
+        <p>For your new year of life, I’m wishing you lots of happiness, good health, exciting adventures, peaceful days, and dreams that slowly turn into reality. I hope you keep being your wonderful self—and remember to celebrate your little wins, too. 🫶</p>
+        <p>Have the best birthday, birthday star! Eat something yummy, take lots of pictures if you feel like it, and enjoy every moment. And if today gets busy, consider this website a tiny reminder that someone is wishing you the very best from their little corner of the world. 🌎💞</p>
+        <p class="signature">Happy Birthday once again, Emmy! 🎀<br>— Your friend💗</p>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="section-title">Birthday wishes, just for you 🌟</h2>
+      <p class="section-sub">Three tiny reminders for your next trip around the sun.</p>
+      <div class="reasons">
+        <div class="reason"><div class="emoji">🌈</div><h3>More happy moments</h3><p>May ordinary days surprise you with something beautiful.</p></div>
+        <div class="reason"><div class="emoji">🧸</div><h3>People who care</h3><p>May you feel appreciated, supported, and never short of kindness.</p></div>
+        <div class="reason"><div class="emoji">🚀</div><h3>Dreams in motion</h3><p>May you find courage for new adventures and celebrate every step.</p></div>
+      </div>
+    </section>
+
+    <section class="gift-area" id="surprise">
+      <h2 class="section-title">Psst… there's a gift for you 🎁</h2>
+      <p class="section-sub">A very important birthday mission: tap the gift box below.</p>
+      <button class="gift-box" id="giftButton" aria-label="Open your birthday surprise" onclick="openGift()">🎁</button>
+      <div class="surprise card" id="surpriseCard" aria-live="polite">
+        <div style="font-size:3rem">💖✨🎉</div>
+        <h3>Surprise, Emmy!</h3>
+        <p>Your gift is a wish that you get <strong>365 new chances to laugh, learn, explore, and feel loved.</strong> May your year be softer when things are hard, brighter when you need hope, and full of unexpected good things.</p>
+        <p>And here's your official birthday certificate:</p>
+        <div style="font-size:1.25rem;font-weight:900;color:#b85b9b;padding:12px">🏆 Certified Birthday Star 🏆</div>
+        <button class="btn secondary" onclick="makeHearts()">Send more hearts 💕</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="card wish-box">
+        <h2 class="section-title">Make a birthday wish 🌠</h2>
+        <p class="section-sub">Take a tiny moment for yourself. Pick a wish and let the universe hear it.</p>
+        <button class="btn secondary" onclick="showWish()">✨ Make my wish</button>
+        <div class="wish-text" id="wishText" aria-live="polite">Your little moment of magic is waiting…</div>
+        <button class="btn" onclick="celebrate()">One more birthday celebration! 🎊</button>
+      </div>
+    </section>
+  </main>
+  <footer>Made with 💗 and a little extra sparkle for Emmy · October 14<br><div class="tiny-note">A small website, with big birthday wishes.</div></footer>
+</div>
+<script>
+  const sparkleBox=document.getElementById('sparkles');
+  for(let i=0;i<32;i++){
+    const s=document.createElement('span');s.className='sparkle';s.textContent=['✦','✧','♡','⋆'][Math.floor(Math.random()*4)];
+    s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(10+Math.random()*18)+'px';s.style.animationDelay=(Math.random()*3)+'s';s.style.color=['#ff8bb8','#b5a0ff','#ffbd87'][i%3];sparkleBox.appendChild(s)
+  }
+  function makeHearts(){
+    const symbols=['💗','💖','💕','💝','✨','🌸'];
+    for(let i=0;i<22;i++){setTimeout(()=>{const h=document.createElement('span');h.className='heart';h.textContent=symbols[Math.floor(Math.random()*symbols.length)];h.style.left=(Math.random()*92+4)+'vw';h.style.top=(55+Math.random()*35)+'vh';document.body.appendChild(h);setTimeout(()=>h.remove(),2500)},i*55)}
+  }
+  function celebrate(){
+    makeHearts();
+    const colors=['#ff6fa8','#b6a0ff','#ffd166','#7bdff2','#ff9f80'];
+    for(let i=0;i<75;i++){const c=document.createElement('span');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.animationDuration=(2+Math.random()*2.5)+'s';c.style.animationDelay=(Math.random()*.7)+'s';c.style.transform='rotate('+Math.random()*360+'deg)';document.body.appendChild(c);setTimeout(()=>c.remove(),5200)}
+  }
+  let giftOpened=false;
+  function openGift(){
+    const card=document.getElementById('surpriseCard');
+    card.classList.add('show');document.getElementById('giftButton').textContent='💝';
+    if(!giftOpened){giftOpened=true;celebrate()}
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  const wishes=[
+    '🌷 I wish for a year full of calm days, kind people, and little joys.',
+    '🌟 I wish for courage to try new things and confidence to be myself.',
+    '🌈 I wish for beautiful surprises and memories worth keeping.',
+    '💗 I wish for health, laughter, peace, and lots of reasons to smile.',
+    '🚀 I wish for my dreams to get a little closer every single day.'
+  ];
+  function showWish(){document.getElementById('wishText').textContent=wishes[Math.floor(Math.random()*wishes.length)];makeHearts()}
+</script>
+</body>
+</html>
